@@ -1,0 +1,34 @@
+<div class='shelf-title'>
+  <h1>Merhaba, Olcay</h1>
+  <p>Hip-hop'tan metal müziğe kadar pek çok türde oluşturulmuş çalma listeleri arasından yayınınıza cuk oturacak bir şeyler mutlaka bulursunuz.</p>
+</div>
+
+<div class='shelf-title'>
+  <h1>Önerilen Çalma Listeleri</h1>
+  <p>Hip-hop'tan metal müziğe kadar pek çok türde oluşturulmuş çalma listeleri arasından yayınınıza cuk oturacak bir şeyler mutlaka bulursunuz.</p>
+</div>
+
+<div class='recent-albums'>
+  <div class='items'>
+    <div class='item' *ngFor='let album of recentAlbums'>
+      <div class='img-container' (click)='openDialog()'>
+        <img [src]='album.img' alt=''>
+      </div>
+      <div class='meta'>
+        <div class='meta-title'>{{album.title}}</div>
+        <div class='meta-subtitle'>{{album.artist}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='shelf-title'>
+  <h1>Popüler Sanatçılar</h1>
+</div>
+<app-popular-artists></app-popular-artists>
+
+<h1>Önerilen İstasyonlar</h1>
+<p>Arkanıza yaslanın ve yayınınıza odaklanın, müzik kısmını biz hallediyoruz. İstediğiniz istasyonu seçin ve müzik kendiliğinden aksın.</p>
+
+<h1>Son çalınanlar</h1>
+<p>Hızlı erişim için dinleme geçmişiniz</p>

@@ -1,0 +1,42 @@
+<div class='player-container'>
+  <div class='player-container-content'>
+    <div class='img-container'>
+      <img class='artwork' [src]='artworkUrl' alt=''>
+    </div>
+    <div class='meta'>
+      <div class='album-title'>Growing Pains</div>
+      <div class='album-artist'>George Alice</div>
+    </div>
+
+    <mat-slider [min]='0' [step]='1' [max]='duration' [value]='isSeeking ? seekedValue : currentTime$ | async'
+                (input)='sliderChange($event)' (valueChange)='onValueChange($event)'
+                (change)='valueChange($event)'></mat-slider>
+
+    <div class='player-controls'>
+      <div class='player-controls-inner'>
+        <div class='buttons'>
+          <button mat-icon-button matTooltip='Karıştır'>
+            <mat-icon>shuffle</mat-icon>
+          </button>
+          <button mat-icon-button matTooltip='Önceki'>
+            <mat-icon>skip_previous</mat-icon>
+          </button>
+          <button mat-icon-button [matTooltip]='isPlaying ? "Duraklat" : "Oynat"' (click)='playPause()'>
+            <mat-icon>{{isPlaying ? 'pause' : 'play_arrow'}}</mat-icon>
+          </button>
+          <button mat-icon-button matTooltip='İleri'>
+            <mat-icon>skip_next</mat-icon>
+          </button>
+          <button mat-icon-button matTooltip='Tekrarla'>
+            <mat-icon>repeat</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class='time'>
+      <time>0:00 / 3:20</time>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<mat-toolbar class='mat-elevation-z1'>
+  <span>App Title</span>
+  <span class='flex-spacer'></span>
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link *ngFor='let tab of tabs' [routerLink]='tab.link' routerLinkActive='mat-tab-label-active'   #rla='routerLinkActive'   [active]='rla.isActive'
+       [routerLinkActiveOptions]='{exact: true}'>{{tab.label}}</a>
+  </nav>
+  <span class='flex-spacer'></span>
+  <img alt='' [src]='avatarUrl'>
+</mat-toolbar>

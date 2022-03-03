@@ -1,0 +1,40 @@
+img {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.flex-spacer {
+  flex: 1 0 auto;
+}
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  background-color: #fff !important;
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+
+.mat-tab-nav-bar, .mat-tab-header {
+  border: none;
+}
+
+.mat-tab-link {
+  min-width: auto;
+  padding: 0;
+  margin: 0 24px;
+  height: 64px;
+  font-family: "Work Sans", sans-serif;
+}
+
+.mat-tab-label-active {
+  opacity: 1;
+}
+
+::ng-deep .mat-ink-bar {
+  height: 4px !important;
+  background-color: #000 !important;
+}
+

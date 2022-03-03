@@ -1,0 +1,10 @@
+<div class='items'>
+  <div class='item' *ngFor='let artist of artists'>
+    <div class='img-shadow'>
+      <img [src]='artist.img' alt=''>
+    </div>
+    <div class='meta'>
+      <div class='meta-title'>{{artist.name}}</div>
+    </div>
+  </div>
+</div>
