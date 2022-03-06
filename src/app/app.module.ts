@@ -17,6 +17,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { AddToPlaylistDialogComponent } from './add-to-playlist-dialog/add-to-playlist-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatTabsModule,
     MatSliderModule,
     MatProgressBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [
     {

@@ -21,7 +21,7 @@ export class AudioService {
     this.audio = new Audio();
   }
 
-  setAudio(src: string = '//localhost:4200/assets/scorpions_wind_of_change.flac') {
+  setAudio(src: string = '//192.168.1.4:4200/assets/scorpions_wind_of_change.flac') {
     this.audio.src = src;
   }
 

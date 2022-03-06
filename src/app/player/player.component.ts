@@ -34,11 +34,50 @@ export class PlayerComponent implements OnInit {
     this.audioService.audio.addEventListener('timeupdate', () => {
       this.currentTime$.next(Math.round(this.audioService.audio.currentTime));
     });
+
+    this.initializeMediaSession();
   }
 
-  playPause() {
+  initializeMediaSession() {
+    if ('mediaSession' in navigator) {
+      // @ts-ignore
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: 'Unforgettable',
+        artist: 'Nat King Cole',
+        album: 'The Ultimate Collection (Remastered)',
+        artwork: [
+          {
+            src: 'https://resources.tidal.com/images/25c44470/19b0/406a/88c5/28d3ae26b6d1/1280x1280.jpg',
+            sizes: '96x96',
+            type: 'image/jpeg'
+          },
+          {
+            src: 'https://resources.tidal.com/images/25c44470/19b0/406a/88c5/28d3ae26b6d1/1280x1280.jpg',
+            sizes: '256x256',
+            type: 'image/jpeg'
+          }
+        ]
+      });
+
+      // @ts-ignore
+      navigator.mediaSession.setActionHandler('play', () => {
+        this.audioService.play();
+      });
+
+      // @ts-ignore
+      navigator.mediaSession.setActionHandler('pause', () => {
+        this.audioService.pause();
+      });
+    }
+  }
+
+  async playPause() {
     this.isPlaying = !this.isPlaying;
-    this.audioService.audio.paused ? this.audioService.play() : this.audioService.pause();
+    if (this.audioService.audio.paused) {
+      await this.audioService.audio.play();
+    } else {
+      this.audioService.audio.pause();
+    }
   }
 
   sliderChange($event: MatSliderChange) {

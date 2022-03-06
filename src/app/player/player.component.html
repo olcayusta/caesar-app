@@ -8,7 +8,7 @@
       <div class='album-artist'>George Alice</div>
     </div>
 
-    <mat-slider [min]='0' [step]='1' [max]='duration' [value]='isSeeking ? seekedValue : currentTime$ | async'
+    <mat-slider class='progress-slider' [min]='0' [step]='1' [max]='duration' [value]='isSeeking ? seekedValue : currentTime$ | async'
                 (input)='sliderChange($event)' (valueChange)='onValueChange($event)'
                 (change)='valueChange($event)'></mat-slider>
 
@@ -32,6 +32,10 @@
           </button>
         </div>
       </div>
+    </div>
+
+    <div class='volume-controls'>
+      <mat-slider [min]='0' [step]='5' [value]='50' [max]='100'></mat-slider>
     </div>
 
     <div class='time'>
